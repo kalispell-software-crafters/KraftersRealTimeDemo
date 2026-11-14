@@ -132,3 +132,6 @@ $RECYCLE.BIN/
 
 _NCrunch*
 
+
+# Rider Settings
+.idea/
