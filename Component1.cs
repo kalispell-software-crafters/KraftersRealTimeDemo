@@ -9,7 +9,9 @@ public class Component1 : IAutomationComponent
 
     public async Task<String> Process(CancellationToken cancellationToken)
     {
-        await Task.Delay(TimeSpan.FromSeconds(5), cancellationToken);
+        Console.WriteLine("Component1 Processed started");
+        await Task.Delay(TimeSpan.FromSeconds(3), cancellationToken);
+        Console.WriteLine("Component1 Processed end ");
         return "Component1 Processed";
     }
 

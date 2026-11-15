@@ -15,8 +15,20 @@ class Program
         stopwatch.Start();
         String message = await component.Process(CancellationToken.None);
         stopwatch.Stop();
-        await component.Teardown();
+        Console.WriteLine($"time await = {stopwatch.Elapsed.TotalMilliseconds}");
 
-        Console.WriteLine($"time = {stopwatch.Elapsed.TotalMilliseconds}");
-    }
+        stopwatch.Reset();
+        stopwatch.Start();
+        _ = component.Process(CancellationToken.None);
+        stopwatch.Stop();
+        Console.WriteLine($"time fire and forget = {stopwatch.Elapsed.TotalMilliseconds}");
+
+        
+        
+        
+        await component.Teardown();
+        
+        
+
+      }
 }
